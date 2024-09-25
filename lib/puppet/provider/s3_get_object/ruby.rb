@@ -35,7 +35,7 @@ Puppet::Type.type(:s3_get_object).provide(:ruby) do
   end
 
   def get_object
-    wrapper = PuppetX::Garrettrowell::Awss3::S3Object::ObjectGetWrapper.new(Aws::S3::Object.new(resource[:bucket_name], resource[:object_key]))
+    wrapper = PuppetX::Garrettrowell::Awss3::S3ObjectGetWrapper.new(Aws::S3::Object.new(resource[:bucket_name], resource[:object_key]))
     obj_data = wrapper.get_object(resource[:path])
     return unless obj_data
   end
