@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'puppet/resource_api'
-require 'aws-sdk-s3' if Puppet.features.awss3?
-
 
 Puppet::ResourceApi.register_type(
   name: 's3get',

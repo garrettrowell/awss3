@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 require 'puppet/resource_api/simple_provider'
+require 'aws-sdk-s3' if Puppet.features.awss3?
 
 # Implementation for the s3get type using the Resource API.
 class Puppet::Provider::S3get::S3get < Puppet::ResourceApi::SimpleProvider
+  confine :feature => :awss3
+
   def get(context)
     context.debug('Returning pre-canned example data')
     [
