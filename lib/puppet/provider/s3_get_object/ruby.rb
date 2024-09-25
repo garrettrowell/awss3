@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'aws-sdk-s3' if Puppet.features.awss3?
-require_relative '../../../puppet_x/garrettrowell/awss3/s3_object'
+require_relative '../../../puppet_x/garrettrowell/awss3/s3object'
 require 'fileutils'
 
 # Ruby Implementation for the s3_get_object type
